@@ -1,0 +1,112 @@
+Bienvenido a REVERSI Jugad@r!
+
+Este es nuestro manual de usuario del juego, y estará disponible para cuando
+lo necesites en cualquier momento de la partida.
+
+RECUERDA:
+
+- MODOS DE EJECUCIÓN DEL JUEGO:
+
+- DESDE LA TERMINAL
+
+1. "./proyecto.out -n 1": ejecución del juego en modo CPU vs JUGADOR.
+2. "./proyecto.out -n 2": ejecución del juego en modo PLAYER vs PLAYER.
+3. "./proyecto.out -h": despliegue del manual de usuario
+4. "./proyecto.out -n <cantidad de jugadores> -t <nombre del archivo>": abrir historial del estado del tablero en un archivo especificado, independiente a la opcion de salvar el juego.
+5. "./proyecto.out -l <nombre de archivo>": carga el ultimo estado de juego en el que se dejo. Si no lo hace, imprime un error y sale. 
+
+- DESDE EL PROGRAMA
+1. "./proyecto.out -n"
+
+- Apareceran en pantalla 6 opciones, en las cuales se incluyen: jugar contra la CPU, contra jugador, desplegar el manual, salir del juego, ver historial o cargar partida.
+
+- Para ello deberás ingresar la letra o numero indicado e ingresarlo con enter para iniciar la ejercución del código.
+
+- ¿COMO SE JUEGA?
+
+    1. El tablero tiene un tamaño de 8x8 casilas
+        - Cada casilla puede contener:
+            - ".": Casilla vacía
+            - "O": Fichas del Jugador 1
+            -"X" Fichas del Jugador 2.
+
+        - Posición inicial:
+            - Se colocan cuatro fichas en el centro del tablero al inicio del juego:
+
+              0 1 2 3 4 5 6 7
+            0 . . . . . . . . 
+            1 . . . . . . . . 
+            2 . . . . . . . . 
+            3 . . . O X . . . 
+            4 . . . X O . . . 
+            5 . . . . . . . . 
+            6 . . . . . . . . 
+            7 . . . . . . . . 
+
+    2. Objetivo del juego
+        - Ganar: el objetivo del juego es que alguno de los dos jugadores cuente con más fichas, uno de otro, al finalizar la partida.
+        - El juego termina cuando:
+            - El tablero está completamente lleno de fichas
+            - Ninguno de los jugadores tiene movimientos válidos
+
+    3. ¿Cómo se juega?
+        - Turnos: los jugadores toman turnos colocando una ficha de su tipo en una casilla vacía, para ello, se debe ingresar a través de coordenadas. Primero deberás ingresar la fila,
+        desde el 0 hasta el 7. Y después la columna, de igual manera. Así, una ficha de tu tipo se imprimirá en una casilla válida y disponible.
+        - Movimientos válidos: un movimiento es válido si un jugador coloca una ficha que captura o voltea una o más fichas del oponente. Esto ocurre si las fichas del oponente están
+        en una línea continua (horizontal, vertical o diagonal) y terminar en otra ficha del jugador que realiza el movimiento.
+
+            - EJEMPLO:
+
+            - Tablero antes del movimiento
+
+              0 1 2 3 4 5 6 7
+            0 . . . . . . . . 
+            1 . . . . . . . . 
+            2 . . . . . . . . 
+            3 . . . O X . . . 
+            4 . . . X O . . . 
+            5 . . . . . . . . 
+            6 . . . . . . . . 
+            7 . . . . . . . .
+            
+            - El jugador 2 inicia (X) y coloca una ficha en la coordenada (5,4). Las fichas del jugador entre (4,4)
+            se voltean:
+
+               0 1 2 3 4 5 6 7
+            0 . . . . . . . . 
+            1 . . . . . . . . 
+            2 . . . . . . . . 
+            3 . . . O X . . . 
+            4 . . . X X X . . 
+            5 . . . . . . . . 
+            6 . . . . . . . . 
+            7 . . . . . . . .
+
+        - En caso de que el movimiento no sea válido, el programa mostrará un mensaje de error y te pedirá intentar de nuevo
+
+
+    4. Reglas del juego
+
+        1. Colocación de fichas:
+            - El jugador debe colocar una ficha en una posición válida que capture al menos una ficha del oponente
+        2. Movimiento obligatorio:
+            - Si cuentas con movimientos válidos, debes jugar. Si no es así, pierdes el turno.
+        3. Cambio de turno:
+            - Después de colocar tu ficha, el turno pasa al oponente.
+        4. Fin del juego:
+            - Termina uando el tablero está lleno o ninguno de los jugadores tiene movimientos válidos
+
+    5. ¿Quién gana?
+        - Al finalizar el juego, se cuentan las fichas de cada jugador:
+            - Jugador 1 (O): Cantidad de fichas 'O'
+            - Jugador 2 (X): Cantidad de fichas 'X'
+
+        - Ganador: el jugador con mas fichas gana.
+
+    6. CONSEJOS Y TIPS
+        - Controla las esquinas:
+            - Las esquinas son posiciones estrategicas porque las fichas colocadas en esas posiciones no pueden ser volteadas.
+        - No hagas movimientos arriesgados:
+            - Evita movimientos que le permitan al oponente capturar multiples fichas o tomar las esquinas
+        - Planifica tus movimientos:
+            - Observa y piensa como tus movimientos afectaran el tablero en turnos futuros.
